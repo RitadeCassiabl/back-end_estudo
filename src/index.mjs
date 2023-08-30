@@ -28,6 +28,16 @@ app.get('/multiplicar', (req, resp) => {
     resp.json({ multiplicação: `${y*x}`});
 });
 
+app.get('/dividir', (req, resp) => {
+    const y = +req.query.y; 
+    const x = +req.query.x; 
+
+    if(Number.isNaN(y) || Number.isNaN(x)){
+        resp.status(404).json({ error: "Os valores de y e x devem ser números! faça a requisição novamente"})
+    }
+    resp.status(200).json({ Resultado: y/x});
+});
+
 app.listen(3000, () => 
 console.log('Server funcionando :) na porta 3000')
 );
