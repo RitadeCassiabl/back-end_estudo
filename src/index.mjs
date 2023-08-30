@@ -30,8 +30,11 @@ app.get('/subtrair', (req, resp) => {
 app.get('/multiplicar', (req, resp) => {
     const y = +req.query.y; 
     const x = +req.query.x; 
-
-    resp.json({ multiplicação: `${y*x}`});
+    
+    if(Number.isNaN(y) || Number.isNaN(x)){
+        resp.status(400).json({ error: "Os valores de y e x devem ser números! faça a requisição novamente"})
+    }
+    resp.status(200).json({ Resultado: y*x});
 });
 
 app.listen(3000, () => 
