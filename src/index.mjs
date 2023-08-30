@@ -14,6 +14,13 @@ app.get('/somar', (req, resp) => {
     resp.json({ soma: `${y+x}`});
 });
 
+app.get('/subtrair', (req, resp) => {
+    const y = +req.query.y; 
+    const x = +req.query.x; 
+
+    resp.json({ subtração: `${y-x}`});
+});
+
 app.listen(3000, () => 
 console.log('Server funcionando :) na porta 3000')
 );
