@@ -25,7 +25,7 @@ app.get('/multiplicar', (req, resp) => {
     const y = +req.query.y; 
     const x = +req.query.x; 
 
-    resp.json({ subtração: `${y*x}`});
+    resp.json({ multiplicação: `${y*x}`});
 });
 
 app.listen(3000, () => 
