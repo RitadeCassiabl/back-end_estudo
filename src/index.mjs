@@ -17,7 +17,7 @@ app.get("/somar", (req, resp) => {
         "Os valores de y e x devem ser números! faça a requisição novamente",
     });
   }
-  resp.status(200).json({ Resultado: y + x });
+  resp.status(200).json({ resultado: y + x });
 });
 
 app.get("/subtrair", (req, resp) => {
