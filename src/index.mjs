@@ -12,12 +12,10 @@ app.get("/somar", (req, resp) => {
   const x = +req.query.x;
 
   if (Number.isNaN(y) || Number.isNaN(x)) {
-    resp
-      .status(400)
-      .json({
-        error:
-          "Os valores de y e x devem ser números! faça a requisição novamente",
-      });
+    resp.status(400).json({
+      error:
+        "Os valores de y e x devem ser números! faça a requisição novamente",
+    });
   }
   resp.status(200).json({ Resultado: y + x });
 });
@@ -27,14 +25,12 @@ app.get("/subtrair", (req, resp) => {
   const x = +req.query.x;
 
   if (Number.isNaN(y) || Number.isNaN(x)) {
-    resp
-      .status(400)
-      .json({
-        error:
-          "Os valores de y e x devem ser números! faça a requisição novamente",
-      });
+    resp.status(400).json({
+      error:
+        "Os valores de y e x devem ser números! faça a requisição novamente",
+    });
   }
-  resp.status(200).json({ Resultado: y - x });
+  resp.status(200).json({ resultado: y - x });
 });
 
 app.get("/multiplicar", (req, resp) => {
@@ -42,12 +38,10 @@ app.get("/multiplicar", (req, resp) => {
   const x = +req.query.x;
 
   if (Number.isNaN(y) || Number.isNaN(x)) {
-    resp
-      .status(400)
-      .json({
-        error:
-          "Os valores de y e x devem ser números! faça a requisição novamente",
-      });
+    resp.status(400).json({
+      error:
+        "Os valores de y e x devem ser números! faça a requisição novamente",
+    });
   }
   resp.status(200).json({ Resultado: y * x });
 });
