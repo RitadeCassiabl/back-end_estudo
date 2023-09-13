@@ -2,13 +2,13 @@
   "name": "teste_express",
   "version": "1.0.0",
   "description": "estudo de back-end",
-  "main": "index.mjs",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./dist/index.mjs",
+    "start": "node ./dist/index.js",
     "tsc": "tsc",
     "postinstall": "npm run tsc",
-    "dev": "node src/index.ts"
+    "dev": "ts-node-dev --respawn --pretty --transpile-only index.ts"
   },
   "repository": {
     "type": "git",

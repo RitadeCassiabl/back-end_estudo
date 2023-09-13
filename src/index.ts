@@ -8,65 +8,73 @@ app.get("/rota_inicial", (req, res) => {
 });
 
 app.get("/somar", (req, res) => {
-  const y = +req.query.y;
-  const x = +req.query.x;
+  let y: number;
+  let x: number;
 
-  if (Number.isNaN(y) || Number.isNaN(x)) {
+  if (req.query.x && req.query.y) {
+    x = +req.query.x;
+    y = +req.query.y;
+    res.status(200).json({ resultado: x + y });
+  } else {
     res.status(400).json({
       error:
         "Os valores de y e x devem ser números! faça a requisição novamente",
     });
   }
-  res.status(200).json({ resultado: x + y });
 });
 
 app.get("/subtrair", (req, res) => {
-  const y = +req.query.y;
-  const x = +req.query.x;
+  let y: number;
+  let x: number;
 
-  if (Number.isNaN(y) || Number.isNaN(x)) {
+  if (req.query.x && req.query.y) {
+    x = +req.query.x;
+    y = +req.query.y;
+    res.status(200).json({ resultado: x - y });
+  } else {
     res.status(400).json({
       error:
         "Os valores de y e x devem ser números! faça a requisição novamente",
     });
   }
-  res.status(200).json({ resultado: x - y });
 });
 
 app.get("/multiplicar", (req, res) => {
-  const y = +req.query.y;
-  const x = +req.query.x;
+  let y: number;
+  let x: number;
 
-  if (Number.isNaN(y) || Number.isNaN(x)) {
+  if (req.query.x && req.query.y) {
+    x = +req.query.x;
+    y = +req.query.y;
+    res.status(200).json({ resultado: x * y });
+  } else {
     res.status(400).json({
       error:
         "Os valores de y e x devem ser números! faça a requisição novamente",
     });
   }
-  res.status(200).json({ resultado: x * y });
 });
 
 app.get("/dividir", (req, res) => {
-  const y = +req.query.y;
-  const x = +req.query.x;
+  let y: number;
+  let x: number;
 
-  if (Number.isNaN(x) || Number.isNaN(y)) {
-    res
-      .status(400)
-      .json({
-        error:
-          "Os valores de y e x devem ser números ! faça a requisição novamente",
+  if (req.query.x && req.query.y) {
+    x = +req.query.x;
+    y = +req.query.y;
+    if (y == 0) {
+      res.status(400).json({
+        error: "Não há como dividir um número por zero!",
       });
-  }else if(y == 0){
-    res
-      .status(400)
-      .json({
-        error:
-          "Não há como dividir um número por 0 ! faça a requisição novamente"
-      })
-  }else{
-    res.status(200).json({ resultado: x / y });
-  } 
+    } else {
+      res.status(200).json({ resultado: x / y });
+    }
+  } else {
+    res.status(400).json({
+      error:
+        "Os valores de y e x devem ser números! faça a requisição novamente",
+    });
+  }
 });
 
 app.listen(3000, () => console.log("Server funcionando :) na porta 3000"));
