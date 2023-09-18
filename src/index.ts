@@ -74,14 +74,13 @@ app.get("/dividir", (req: Request, res: Response) => {
       res.status(400).json({
         error: "Não há como dividir um número por zero!",
       });
-      if (Number.isNaN(x) || Number.isNaN(y)) {
-        res.status(400).json({
-          error:
-            "Os valores de y e x devem ser números! faça a requisição novamente",
-        });
-      } else {
-        res.status(200).json({ resultado: x / y });
-      }
+    } else if (Number.isNaN(x) || Number.isNaN(y)) {
+      res.status(400).json({
+        error:
+          "Os valores de y e x devem ser números! faça a requisição novamente",
+      });
+    } else {
+      res.status(200).json({ resultado: x / y });
     }
   }
 });
