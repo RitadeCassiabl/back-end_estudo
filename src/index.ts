@@ -5,11 +5,11 @@ import { Response } from "express";
 const app = express();
 app.use(express.json());
 
-app.get("/rota_inicial", (req:Request, res:Response) => {
+app.get("/rota_inicial", (req: Request, res: Response) => {
   res.status(200).send("Bem vindo a primeira rota!");
 });
 
-app.get("/somar", (req:Request, res:Response) => {
+app.get("/somar", (req: Request, res: Response) => {
   let y: number;
   let x: number;
 
@@ -27,7 +27,7 @@ app.get("/somar", (req:Request, res:Response) => {
   }
 });
 
-app.get("/subtrair", (req:Request, res:Response) => {
+app.get("/subtrair", (req: Request, res: Response) => {
   let y: number;
   let x: number;
 
@@ -45,7 +45,7 @@ app.get("/subtrair", (req:Request, res:Response) => {
   }
 });
 
-app.get("/multiplicar", (req:Request, res:Response) => {
+app.get("/multiplicar", (req: Request, res: Response) => {
   let y: number;
   let x: number;
 
@@ -63,7 +63,7 @@ app.get("/multiplicar", (req:Request, res:Response) => {
   }
 });
 
-app.get("/dividir", (req:Request, res:Response) => {
+app.get("/dividir", (req: Request, res: Response) => {
   let y: number;
   let x: number;
 
